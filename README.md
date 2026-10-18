@@ -8,7 +8,7 @@ An **Agent Skill for IELTS Reading (Academic & General Training)** that helps Ch
 >
 > **Unofficial, original teaching demo.** Not affiliated with IELTS, Cambridge, IDP, or the British Council. The sample passage and exercises were written for this project; they are not official IELTS exam questions.
 
-## What does this project actually do?
+## Features & Workflows
 
 | Mode | User provides | Output |
 | --- | --- | --- |
@@ -27,7 +27,7 @@ An **Agent Skill for IELTS Reading (Academic & General Training)** that helps Ch
 
 There is **no separate website, mobile app, or voice interface** in this version. The immediate outputs are text/Markdown and JSON files.
 
-## One-command interview demo
+## One-command Demo
 
 **Requirements:** Python 3.10+; no package installation or API key needed. Open a terminal in the repository root:
 
@@ -112,12 +112,12 @@ The grader uses a **teacher-supplied answer key**, checks answer choices and wor
 
 For advanced use, see [dataset format](skills/ielts-reading-tutor/references/dataset-format.md). You can also run `ielts_tool.py` with your own valid JSON questions and answers. The validator checks presence of evidence quotations and basic structure; **logical accuracy and acceptable alternative answers still require teacher review**.
 
-## What an interviewer can verify
+## Quick Start & Verification
 
-1. Run `python demo.py` to reproduce materials and results without an API key.
-2. Inspect `skills/ielts-reading-tutor/SKILL.md` to understand the evidence-first, bilingual tutoring workflow.
-3. Inspect `examples/20-minute-lesson-plan.md` for a practical IELTS Reading teaching scenario.
-4. Run the tests to verify the grading and rendering logic.
+1. **Run the demo:** Execute `python demo.py` to generate reproducible worksheets, answer keys, and grading reports without an API key.
+2. **Explore the Agent Skill:** Read [`SKILL.md`](skills/ielts-reading-tutor/SKILL.md) for the evidence-first bilingual tutoring workflow.
+3. **Review teaching materials:** Browse [`examples/`](examples/) for original reading exercises, answer explanations, and a 20-minute lesson plan.
+4. **Run automated tests:** Execute `python -m unittest discover -s tests -v` to verify validation, rendering, and answer-key-based grading.
 
 ## Privacy, copyright and license
 
