@@ -20,7 +20,7 @@ The bundled `assets/sample-exercise.json` is the complete, executable example. M
 }
 ```
 
-Question types supported by the included CLI: `tfng`, `ynng`, `multiple_choice`, `matching_headings`, `short_answer`. For multiple choice, add `options` as a map of `A/B/C/D` to option texts and use an option letter as `answer`. For short answers, set integer `word_limit`, and optionally `alternatives` (only for genuinely acceptable equivalent source responses). For headings, use an `answer` key present in `heading_bank`. For types not supported in code, the language-model tutor may still explain and draft content directly with evidence, but must not claim the CLI validates those formats.
+Question types supported by the included CLI: `tfng`, `ynng`, `multiple_choice`, `matching_headings`, `matching_information`, `matching_features`, `completion`, `short_answer`. For multiple choice, add `options` as a map of `A/B/C/D` to option texts and use an option letter as `answer`. For short answers and completions, set integer `word_limit`, and optionally `alternatives` (only for genuinely acceptable equivalent source responses). For headings, use an `answer` key present in `heading_bank`. For `matching_information`, set `answer` to a paragraph label from `paragraphs` (e.g. `"C"`). For `matching_features`, define a `feature_bank` object at dataset level, for example `{"A":"Librarians", "B":"Volunteers", "C":"Survey participants"}`, and use its option label as the answer. For `completion`, create one question per blank, set `word_limit` to an integer, and ensure the answer appears in that question's evidence quote. For sentence, summary, table and note completion, place the surrounding text in `prompt`. Feature/paragraph options may be reused when allowed by the printed instructions. For types not supported in code, the language-model tutor may still explain and draft content directly with evidence, but must not claim the CLI validates those formats.
 
 Sample answer submissions are a JSON object mapping item numbers to strings, for example:
 
@@ -37,4 +37,4 @@ python scripts/ielts_tool.py render --dataset assets/sample-exercise.json --mode
 python scripts/ielts_tool.py grade --dataset assets/sample-exercise.json --answers assets/sample-responses.json --format markdown
 ```
 
-`grade` uses an exact-answer matcher after basic case, whitespace and common TRUE/FALSE/NOT GIVEN alias normalization. It does not infer semantic equivalents, recognize arbitrary paraphrases, or invoke AI. Review unexpected short-answer responses manually.
+`grade` uses an exact-answer matcher after basic case, whitespace and common TRUE/FALSE/NOT GIVEN alias normalization. It does not infer semantic equivalents, recognize arbitrary paraphrases, or invoke AI. Review unexpected short-answer and completion responses manually; matching requires the supplied answer key and does not prove that a generated item is semantically unambiguous.

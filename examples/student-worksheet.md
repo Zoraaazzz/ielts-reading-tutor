@@ -16,7 +16,7 @@
 
 ## Questions
 
-Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Questions 10–11: choose a heading i–v for paragraphs C and D. Questions 12–13: NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Questions 10–11: choose a heading i–v for paragraphs C and D. Questions 12–13: NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage. Questions 14–15: match information to paragraph A–D (letters may be reused). Questions 16–17: match each statement to a feature A–C (letters may be reused). Questions 18–19: complete the sentences using NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
 
 **Heading bank for matching-headings questions**
 
@@ -25,6 +25,12 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 - **iii.** Learning through community repair sessions
 - **iv.** An increase in repair costs
 - **v.** How libraries replaced local shops
+
+**Feature bank for matching-features questions**
+
+- **A.** Librarians / library staff
+- **B.** Workshop volunteers
+- **C.** Survey participants
 
 **1.** The Object Lending Corner began in 2021.
 
@@ -58,6 +64,18 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 
 **13.** How many participants completed the questionnaire?
 
+**14.** Which paragraph (A–D) mentions that workshops are open to people without a library card?
+
+**15.** Which paragraph (A–D) notes that environmental impact had not been measured?
+
+**16.** Who warned visitors that some repairs needed professional attention? Choose A, B or C from the feature bank.
+
+**17.** Who reported buying fewer new household products after joining the scheme? Choose A, B or C from the feature bank.
+
+**18.** Each object could be borrowed for ______ days. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+
+**19.** The questionnaire was completed by ______ participants. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+
 ## Answer sheet
 
 | Question | Your answer |
@@ -75,4 +93,10 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 | 11 | __________ |
 | 12 | __________ |
 | 13 | __________ |
+| 14 | __________ |
+| 15 | __________ |
+| 16 | __________ |
+| 17 | __________ |
+| 18 | __________ |
+| 19 | __________ |
 

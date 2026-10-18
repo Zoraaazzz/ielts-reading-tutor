@@ -28,8 +28,8 @@ class DemoTests(unittest.TestCase):
             results = json.loads((output / "student-results.json").read_text(encoding="utf-8"))
             self.assertNotIn("教师版", student)
             self.assertIn("教师版", teacher)
-            self.assertIn("76.9%", feedback)
-            self.assertEqual((results["correct"], results["total"]), (10, 13))
+            self.assertIn("73.7%", feedback)
+            self.assertEqual((results["correct"], results["total"]), (14, 19))
             self.assertIn("A. Sewing machines", student)
             self.assertIn("B. Portable projectors", student)
 
@@ -42,7 +42,7 @@ class DemoTests(unittest.TestCase):
                 [sys.executable, str(tool), "grade", "--dataset", str(data), "--answers", str(answers), "--format", "json"],
                 capture_output=True, text=True, check=True, cwd=tmpdir
             )
-            self.assertEqual(json.loads(completed.stdout)["correct"], 10)
+            self.assertEqual(json.loads(completed.stdout)["correct"], 14)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
     "minutes": 18,
     "module": "Academic-style (original practice)",
     "source": "Original fictional educational passage; not an official IELTS paper",
-    "instructions": "Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Questions 10–11: choose a heading i–v for paragraphs C and D. Questions 12–13: NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage."
+    "instructions": "Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Questions 10–11: choose a heading i–v for paragraphs C and D. Questions 12–13: NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage. Questions 14–15: match information to paragraph A–D (letters may be reused). Questions 16–17: match each statement to a feature A–C (letters may be reused). Questions 18–19: complete the sentences using NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage."
   },
   "paragraphs": [
     {
@@ -213,6 +213,85 @@
       "explanation_zh": "题干问完成问卷的人数，直接定位completed by 120 participants。",
       "skill": "numbers",
       "word_limit": 2
+    },
+    {
+      "id": 14,
+      "type": "matching_information",
+      "prompt": "Which paragraph (A–D) mentions that workshops are open to people without a library card?",
+      "answer": "C",
+      "evidence": {
+        "paragraph": "C",
+        "quote": "The sessions were open to residents whether or not they held a library card."
+      },
+      "explanation_zh": "C段说明工作坊向所有居民开放，无需持有借书证，因此选C。",
+      "skill": "detail-location"
+    },
+    {
+      "id": 15,
+      "type": "matching_information",
+      "prompt": "Which paragraph (A–D) notes that environmental impact had not been measured?",
+      "answer": "D",
+      "evidence": {
+        "paragraph": "D",
+        "quote": "the team had not measured any change in carbon emissions."
+      },
+      "explanation_zh": "D段明确提到团队没有测量碳排放变化，因此选D。",
+      "skill": "detail-location"
+    },
+    {
+      "id": 16,
+      "type": "matching_features",
+      "prompt": "Who warned visitors that some repairs needed professional attention? Choose A, B or C from the feature bank.",
+      "answer": "B",
+      "evidence": {
+        "paragraph": "C",
+        "quote": "Volunteers helped visitors examine small household goods, while reminding them that some problems were unsafe to tackle without a professional."
+      },
+      "explanation_zh": "原文提醒大家部分修理需要专业人员的是志愿者（volunteers），对应选项B。",
+      "skill": "entity-matching"
+    },
+    {
+      "id": 17,
+      "type": "matching_features",
+      "prompt": "Who reported buying fewer new household products after joining the scheme? Choose A, B or C from the feature bank.",
+      "answer": "C",
+      "evidence": {
+        "paragraph": "D",
+        "quote": "Of these, 74 said they had bought fewer new household products since joining the scheme."
+      },
+      "explanation_zh": "反馈调查的参与者表示减少了购买家用品，对应C。",
+      "skill": "entity-matching"
+    },
+    {
+      "id": 18,
+      "type": "completion",
+      "prompt": "Each object could be borrowed for ______ days. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.",
+      "answer": "seven",
+      "word_limit": 2,
+      "evidence": {
+        "paragraph": "A",
+        "quote": "Each object could be borrowed for seven days with a library card"
+      },
+      "explanation_zh": "定位借阅期限seven days，空格后的days已出现，因此填seven。",
+      "skill": "exact-word-retrieval"
+    },
+    {
+      "id": 19,
+      "type": "completion",
+      "prompt": "The questionnaire was completed by ______ participants. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.",
+      "answer": "120",
+      "word_limit": 2,
+      "evidence": {
+        "paragraph": "D",
+        "quote": "the library collected feedback through a questionnaire completed by 120 participants"
+      },
+      "explanation_zh": "定位questionnaire completed by 120 participants，数字直接填120。",
+      "skill": "exact-word-retrieval"
     }
-  ]
+  ],
+  "feature_bank": {
+    "A": "Librarians / library staff",
+    "B": "Workshop volunteers",
+    "C": "Survey participants"
+  }
 }

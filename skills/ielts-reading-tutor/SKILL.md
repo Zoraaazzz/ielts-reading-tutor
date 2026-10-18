@@ -83,7 +83,7 @@ python scripts/ielts_tool.py render --dataset assets/sample-exercise.json --mode
 python scripts/ielts_tool.py grade --dataset assets/sample-exercise.json --answers assets/sample-responses.json
 ```
 
-Run these commands from the Skill directory, or substitute absolute paths. The CLI is a deterministic helper: it does **not** call a language model or independently generate new reading passages. Newly generated exercises must use the documented JSON schema in [references/dataset-format.md](references/dataset-format.md) before this CLI can validate or grade them. Evaluate short-answer variants carefully: the exact matcher accepts only the keyed answers/alternatives, so a teacher should review reasonable unlisted equivalents.
+Run these commands from the Skill directory, or substitute absolute paths. The CLI supports structured auto-grading for TFNG, YNNG, multiple choice, matching headings, matching information, matching features, single-blank completion, and short answers. For matching features add `feature_bank`; for completion provide one numbered item per blank and `word_limit`. The CLI is a deterministic helper: it does **not** call a language model or independently generate new reading passages. Newly generated exercises must use the documented JSON schema in [references/dataset-format.md](references/dataset-format.md) before this CLI can validate or grade them. Evaluate short-answer variants carefully: the exact matcher accepts only the keyed answers/alternatives, so a teacher should review reasonable unlisted equivalents.
 
 ## Before delivering
 

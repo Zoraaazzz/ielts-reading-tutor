@@ -1,6 +1,6 @@
 # 雅思阅读练习反馈 / Practice feedback
 
-**正确：10/13** · 已作答：13/13 · **练习准确率：76.9%**
+**正确：14/19** · 已作答：19/19 · **练习准确率：73.7%**
 
 > 本练习为原创教学材料；准确率不等于官方 IELTS Band Score。
 
@@ -71,6 +71,36 @@
 - **定位：** Paragraph D: “a questionnaire completed by 120 participants”
 - **解析：** 题干问完成问卷的人数，直接定位completed by 120 participants。
 
+**Q14 ✓** · Your answer: `C` · Key: **C**
+
+- **定位：** Paragraph C: “The sessions were open to residents whether or not they held a library card.”
+- **解析：** C段说明工作坊向所有居民开放，无需持有借书证，因此选C。
+
+**Q15 ✗** · Your answer: `B` · Key: **D**
+
+- **定位：** Paragraph D: “the team had not measured any change in carbon emissions.”
+- **解析：** D段明确提到团队没有测量碳排放变化，因此选D。
+
+**Q16 ✓** · Your answer: `B` · Key: **B**
+
+- **定位：** Paragraph C: “Volunteers helped visitors examine small household goods, while reminding them that some problems were unsafe to tackle without a professional.”
+- **解析：** 原文提醒大家部分修理需要专业人员的是志愿者（volunteers），对应选项B。
+
+**Q17 ✗** · Your answer: `A` · Key: **C**
+
+- **定位：** Paragraph D: “Of these, 74 said they had bought fewer new household products since joining the scheme.”
+- **解析：** 反馈调查的参与者表示减少了购买家用品，对应C。
+
+**Q18 ✓** · Your answer: `seven` · Key: **seven**
+
+- **定位：** Paragraph A: “Each object could be borrowed for seven days with a library card”
+- **解析：** 定位借阅期限seven days，空格后的days已出现，因此填seven。
+
+**Q19 ✓** · Your answer: `120` · Key: **120**
+
+- **定位：** Paragraph D: “the library collected feedback through a questionnaire completed by 120 participants”
+- **解析：** 定位questionnaire completed by 120 participants，数字直接填120。
+
 ## 分题型表现
 
 | Type | Correct | Total |
@@ -79,8 +109,11 @@
 | multiple_choice | 2 | 2 |
 | matching_headings | 1 | 2 |
 | short_answer | 2 | 2 |
+| matching_information | 1 | 2 |
+| matching_features | 1 | 2 |
+| completion | 2 | 2 |
 
 **建议优先练习：** negation、missing-information、main-idea
 
-*短答案采用标准化后精确匹配；请人工核对合理的未列入同义答案。*
+*填空和简答采用标准化后精确匹配并检查词数；请教师人工核对合理的未列入同义答案。*
 

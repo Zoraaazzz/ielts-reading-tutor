@@ -13,7 +13,8 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 
-SUPPORTED_TYPES = {"tfng", "ynng", "multiple_choice", "matching_headings", "short_answer"}
+SUPPORTED_TYPES = {"tfng", "ynng", "multiple_choice", "matching_headings", "matching_information", "matching_features", "completion", "short_answer"}
+WORD_LIMIT_TYPES = {"completion", "short_answer"}
 TRUE_FALSE_NG = {"TRUE", "FALSE", "NOT GIVEN"}
 YES_NO_NG = {"YES", "NO", "NOT GIVEN"}
 
@@ -73,6 +74,9 @@ def validate(dataset: dict) -> list[str]:
     headings = dataset.get("heading_bank", {})
     _assert(isinstance(headings, dict), "heading_bank must be an object", errors)
     headings = headings if isinstance(headings, dict) else {}
+    features = dataset.get("feature_bank", {})
+    _assert(isinstance(features, dict), "feature_bank must be an object", errors)
+    features = features if isinstance(features, dict) else {}
     questions = dataset.get("questions")
     _assert(isinstance(questions, list) and bool(questions), "questions must be a nonempty array", errors)
     if not isinstance(questions, list):
@@ -125,14 +129,27 @@ def validate(dataset: dict) -> list[str]:
                 errors.append(f"{prefix}: answer is not an option letter")
         if type_ == "matching_headings" and answer not in headings:
             errors.append(f"{prefix}: answer is not in heading_bank")
-        if type_ == "short_answer":
+        if type_ == "matching_information":
+            if not isinstance(answer, str) or answer not in pmap:
+                errors.append(f"{prefix}: matching_information answer must be a passage paragraph label")
+            elif isinstance(evidence, dict) and evidence.get("paragraph") in pmap and answer != evidence.get("paragraph"):
+                errors.append(f"{prefix}: matching_information answer does not match evidence paragraph")
+        if type_ == "matching_features":
+            if not features or any(not isinstance(k, str) or not k.strip() or not isinstance(v, str) or not v.strip() for k, v in features.items()):
+                errors.append(f"{prefix}: matching_features requires a valid feature_bank")
+            elif answer not in features:
+                errors.append(f"{prefix}: matching_features answer is not in feature_bank")
+        if type_ in WORD_LIMIT_TYPES:
             limit = item.get("word_limit")
             if not isinstance(limit, int) or isinstance(limit, bool) or limit < 1:
-                errors.append(f"{prefix}: short_answer requires positive word_limit")
+                errors.append(f"{prefix}: {type_} requires positive word_limit")
             else:
                 for candidate in [answer, *alternatives]:
                     if len(candidate.strip().split()) > limit:
                         errors.append(f"{prefix}: answer or alternative exceeds {limit}-word limit")
+            if type_ == "completion" and isinstance(evidence, dict) and isinstance(evidence.get("quote"), str):
+                if answer and not re.search(r"(?<!\w)" + re.escape(text_normalize(answer)) + r"(?!\w)", text_normalize(evidence["quote"])):
+                    errors.append(f"{prefix}: completion answer must appear in the evidence quote")
     if ids != list(range(1, len(questions) + 1)):
         errors.append("question ids must be unique and sequential from 1")
     return errors
@@ -150,6 +167,10 @@ def render_student(dataset: dict) -> str:
     lines += ["## Questions", "", meta.get("instructions", "Answer all questions from the passage."), ""]
     if dataset.get("heading_bank") and any(q["type"] == "matching_headings" for q in dataset["questions"]):
         lines += ["**Heading bank for matching-headings questions**", "", heading_table(dataset), ""]
+    if dataset.get("feature_bank") and any(q["type"] == "matching_features" for q in dataset["questions"]):
+        lines += ["**Feature bank for matching-features questions**", ""]
+        lines += [f"- **{label}.** {description}" for label, description in dataset["feature_bank"].items()]
+        lines.append("")
     for q in dataset["questions"]:
         lines.append(f"**{q['id']}.** {q['prompt']}")
         if q["type"] == "multiple_choice":
@@ -175,7 +196,8 @@ def grade(dataset: dict, responses: dict) -> dict:
         value = responses.get(str(id_), responses.get(id_, ""))
         submitted = str(value).strip() if value is not None else ""
         correct_answers = [q["answer"], *q.get("alternatives", [])]
-        is_correct = bool(submitted) and any(choice_normalize(submitted, qtype) == choice_normalize(expected, qtype) for expected in correct_answers)
+        within_word_limit = qtype not in WORD_LIMIT_TYPES or len(submitted.split()) <= q.get("word_limit", 0)
+        is_correct = bool(submitted) and within_word_limit and any(choice_normalize(submitted, qtype) == choice_normalize(expected, qtype) for expected in correct_answers)
         items.append({"id":id_, "type":qtype, "given":submitted, "expected":q["answer"], "correct":is_correct, "attempted":bool(submitted), "evidence":q["evidence"], "explanation_zh":q["explanation_zh"], "skill":q["skill"]})
     total = len(items)
     attempted = sum(x["attempted"] for x in items)
@@ -194,7 +216,7 @@ def grade_markdown(result: dict) -> str:
         lines += [f"**Q{item['id']} {status}** · Your answer: `{given}` · Key: **{item['expected']}**", "", f"- **定位：** Paragraph {ev['paragraph']}: “{ev['quote']}”", f"- **解析：** {item['explanation_zh']}", ""]
     lines += ["## 分题型表现", "", "| Type | Correct | Total |", "|:--|--:|--:|"]
     lines += [f"| {kind} | {counts['correct']} | {counts['total']} |" for kind,counts in result["by_type"].items()]
-    lines += ["", "**建议优先练习：** " + ("、".join(result["error_focus"]) if result["error_focus"] else "维持原文定位与逐题核对。"), "", "*短答案采用标准化后精确匹配；请人工核对合理的未列入同义答案。*", ""]
+    lines += ["", "**建议优先练习：** " + ("、".join(result["error_focus"]) if result["error_focus"] else "维持原文定位与逐题核对。"), "", "*填空和简答采用标准化后精确匹配并检查词数；请教师人工核对合理的未列入同义答案。*", ""]
     return "\n".join(lines)
 
 

@@ -16,7 +16,7 @@
 
 ## Questions
 
-Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Questions 10–11: choose a heading i–v for paragraphs C and D. Questions 12–13: NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Questions 10–11: choose a heading i–v for paragraphs C and D. Questions 12–13: NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage. Questions 14–15: match information to paragraph A–D (letters may be reused). Questions 16–17: match each statement to a feature A–C (letters may be reused). Questions 18–19: complete the sentences using NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
 
 **Heading bank for matching-headings questions**
 
@@ -25,6 +25,12 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 - **iii.** Learning through community repair sessions
 - **iv.** An increase in repair costs
 - **v.** How libraries replaced local shops
+
+**Feature bank for matching-features questions**
+
+- **A.** Librarians / library staff
+- **B.** Workshop volunteers
+- **C.** Survey participants
 
 **1.** The Object Lending Corner began in 2021.
 
@@ -58,6 +64,18 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 
 **13.** How many participants completed the questionnaire?
 
+**14.** Which paragraph (A–D) mentions that workshops are open to people without a library card?
+
+**15.** Which paragraph (A–D) notes that environmental impact had not been measured?
+
+**16.** Who warned visitors that some repairs needed professional attention? Choose A, B or C from the feature bank.
+
+**17.** Who reported buying fewer new household products after joining the scheme? Choose A, B or C from the feature bank.
+
+**18.** Each object could be borrowed for ______ days. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+
+**19.** The questionnaire was completed by ______ participants. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+
 ## Answer sheet
 
 | Question | Your answer |
@@ -75,6 +93,12 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 | 11 | __________ |
 | 12 | __________ |
 | 13 | __________ |
+| 14 | __________ |
+| 15 | __________ |
+| 16 | __________ |
+| 17 | __________ |
+| 18 | __________ |
+| 19 | __________ |
 
 
 ---
@@ -160,4 +184,40 @@ Questions 1–7: TRUE / FALSE / NOT GIVEN. Questions 8–9: choose A, B or C. Qu
 - **Evidence / 定位：** Paragraph D: “a questionnaire completed by 120 participants”
 - **解析：** 题干问完成问卷的人数，直接定位completed by 120 participants。
 - **考点：** `numbers`
+
+### Q14 — C
+
+- **Evidence / 定位：** Paragraph C: “The sessions were open to residents whether or not they held a library card.”
+- **解析：** C段说明工作坊向所有居民开放，无需持有借书证，因此选C。
+- **考点：** `detail-location`
+
+### Q15 — D
+
+- **Evidence / 定位：** Paragraph D: “the team had not measured any change in carbon emissions.”
+- **解析：** D段明确提到团队没有测量碳排放变化，因此选D。
+- **考点：** `detail-location`
+
+### Q16 — B
+
+- **Evidence / 定位：** Paragraph C: “Volunteers helped visitors examine small household goods, while reminding them that some problems were unsafe to tackle without a professional.”
+- **解析：** 原文提醒大家部分修理需要专业人员的是志愿者（volunteers），对应选项B。
+- **考点：** `entity-matching`
+
+### Q17 — C
+
+- **Evidence / 定位：** Paragraph D: “Of these, 74 said they had bought fewer new household products since joining the scheme.”
+- **解析：** 反馈调查的参与者表示减少了购买家用品，对应C。
+- **考点：** `entity-matching`
+
+### Q18 — seven
+
+- **Evidence / 定位：** Paragraph A: “Each object could be borrowed for seven days with a library card”
+- **解析：** 定位借阅期限seven days，空格后的days已出现，因此填seven。
+- **考点：** `exact-word-retrieval`
+
+### Q19 — 120
+
+- **Evidence / 定位：** Paragraph D: “the library collected feedback through a questionnaire completed by 120 participants”
+- **解析：** 定位questionnaire completed by 120 participants，数字直接填120。
+- **考点：** `exact-word-retrieval`
 

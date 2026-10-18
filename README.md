@@ -18,7 +18,7 @@ An **Agent Skill for IELTS Reading (Academic & General Training)** that helps Ch
 | **Teacher preparation / 备课** | Reading material and target level | Student worksheet, separate teacher key, and timed mini-lesson plan |
 | **Python demo / 可运行演示** | Bundled sample exercise and responses | Markdown worksheets, a grading report, and JSON results |
 
-**Key IELTS Reading topics:** TRUE / FALSE / NOT GIVEN, YES / NO / NOT GIVEN, matching headings, matching details/features, multiple choice, short answers and completion questions. The example dataset exercises **TFNG, multiple choice, matching headings and short answers**; other types are supported by the Agent Skill's teaching instructions and would require their own content or dataset extension.
+**Key IELTS Reading topics:** TRUE / FALSE / NOT GIVEN, YES / NO / NOT GIVEN, matching headings, matching details/features, multiple choice, short answers and completion questions. The bundled dataset demonstrates **TFNG, multiple choice, matching headings, matching information, matching features, completion and short answers**. The validator and keyed grader additionally support **Y/N/NG** with a valid dataset. Other diagram/flow-chart reasoning can be taught by the Agent Skill but is not automatically graded by the current CLI.
 
 ### How the two parts work
 
@@ -39,13 +39,13 @@ This creates a `demo-output/` folder containing:
 
 ```text
 demo-output/
-├── student-worksheet.md       # Learner-facing passage, 13 questions, answer sheet
+├── student-worksheet.md       # Learner-facing passage, 19 questions, answer sheet
 ├── teacher-answer-key.md      # Correct answers, passage quotes, Chinese explanations
 ├── student-feedback.md        # Example marking result, evidence and improvement areas
 └── student-results.json       # Machine-readable score and per-question results
 ```
 
-The bundled **original demonstration** contains a four-paragraph passage, 13 IELTS-style reading questions, and sample learner answers. Running the demo gives **10/13 correct (76.9% accuracy)**. This accuracy is specific to this tiny practice set; **it is not an IELTS band score**.
+The bundled **original demonstration** contains a four-paragraph passage, 19 IELTS-style reading questions, and sample learner answers. Running the demo gives **14/19 correct (73.7% accuracy)**. This accuracy is specific to this tiny practice set; **it is not an IELTS band score**.
 
 Browse the ready-made examples in [`examples/`](examples/): learner worksheet, teacher key, marking feedback, and a 20-minute reading lesson plan.
 
@@ -94,6 +94,21 @@ ielts-reading-tutor/
 │   └── scripts/ielts_tool.py           # validate / render / grade CLI
 └── tests/                              # Python tests
 ```
+
+### Python auto-grading coverage (v1.1)
+
+| Question type | Rule-based validation and grading | Included in demo |
+| --- | :---: | :---: |
+| True/False/Not Given (`tfng`) | ✅ | ✅ |
+| Yes/No/Not Given (`ynng`) | ✅ | — |
+| Multiple Choice (`multiple_choice`) | ✅ | ✅ |
+| Matching Headings (`matching_headings`) | ✅ | ✅ |
+| Matching Information (`matching_information`) | ✅ | ✅ |
+| Matching Features (`matching_features`) | ✅ | ✅ |
+| Sentence / Summary / Table / Note Completion (`completion`) | ✅ (one answer per numbered blank) | ✅ |
+| Short Answer (`short_answer`) | ✅ | ✅ |
+
+The grader uses a **teacher-supplied answer key**, checks answer choices and word limits, then produces per-question evidence and error statistics. Completion tasks are represented as one numbered item per blank. It **does not** autonomously decide whether a novel answer is semantically correct, infer unstated grading keys, or assign an official IELTS band score.
 
 For advanced use, see [dataset format](skills/ielts-reading-tutor/references/dataset-format.md). You can also run `ielts_tool.py` with your own valid JSON questions and answers. The validator checks presence of evidence quotations and basic structure; **logical accuracy and acceptable alternative answers still require teacher review**.
 
