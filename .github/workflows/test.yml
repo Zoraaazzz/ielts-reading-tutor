@@ -1,0 +1,27 @@
+name: Test IELTS Reading Tutor
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate bundled exercise
+        run: python skills/ielts-reading-tutor/scripts/ielts_tool.py validate --dataset skills/ielts-reading-tutor/assets/sample-exercise.json
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Run end-to-end demo
+        run: |
+          python demo.py
+          test -s demo-output/student-worksheet.md
+          test -s demo-output/teacher-answer-key.md
+          test -s demo-output/student-feedback.md
+          test -s demo-output/student-results.json
