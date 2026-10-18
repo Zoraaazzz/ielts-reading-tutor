@@ -1,4 +1,0 @@
-interface:
-  display_name: "IELTS Reading Tutor"
-  short_description: "IELTS Reading (Band 4.5–6.0): bilingual tutoring and feedback"
-  default_prompt: "Use $ielts-reading-tutor to teach this IELTS Reading passage to a band 5.5 student, then create guided practice with evidence-based explanations."
